@@ -12,6 +12,7 @@ module CarrierWave
         add_config :s3_access_key_id
         add_config :s3_secret_access_key
         add_config :s3_cnamed
+        add_config :s3_headers
         add_config :grid_fs_database
         add_config :grid_fs_host
         add_config :grid_fs_username

@@ -164,7 +164,7 @@ module CarrierWave
       def store!(file)
         connect!(uploader)
         s3_options = {:access => uploader.s3_access, :content_type => file.content_type}
-        s3_options.merge!(uploader.s3_headers)
+        s3_options.merge!(uploader.s3_headers) if uploader.s3_headers
         AWS::S3::S3Object.store(uploader.store_path, file.read, uploader.s3_bucket, s3_options)
         CarrierWave::Storage::S3::File.new(uploader, uploader.store_path)
       end
